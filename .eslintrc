@@ -1,0 +1,36 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": ["react-app", "react-app/jest", "airbnb-typescript", "prettier"],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module",
+    "project": "./tsconfig.json"
+  },
+  "plugins": ["react", "prettier", "@typescript-eslint"],
+  "rules": {
+    "react/jsx-filename-extension": 0,
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/no-unsafe-member-access": "off",
+    "@typescript-eslint/no-unsafe-call": "off",
+    "@typescript-eslint/restrict-template-expressions": "off",
+    "@typescript-eslint/no-floating-promises": "off",
+    "@typescript-eslint/no-unsafe-assignment": "off",
+    "@typescript-eslint/no-unnecessary-condition": "off",
+    "@typescript-eslint/no-unused-vars": "warn",
+    "jsx-a11y/control-has-associated-label": "warn",
+    "react/prop-types": "warn",
+    "react/no-children-prop": "warn"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
+}

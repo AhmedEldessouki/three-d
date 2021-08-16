@@ -1,0 +1,9 @@
+node_modules
+coverage
+.cache
+build
+public
+.firebase
+.circleci
+.husky
+desc
