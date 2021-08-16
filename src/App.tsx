@@ -35,9 +35,7 @@ function SomeThing() {
 function App() {
   return (
     <div className="App">
-      <Canvas>
-        <SomeThing />
-      </Canvas>
+      <SomeThing />
     </div>
   )
 }
