@@ -65,28 +65,46 @@ export default function App() {
   const [fogColor, setFogColor] = React.useState('#272730')
   const [fogNear, setFogNear] = React.useState(16)
   const [fogFar, setFogFar] = React.useState(30)
-  const [cameraX, setCameraX] = React.useState(0)
-  const [cameraY, setCameraY] = React.useState(0)
-  const [cameraZ, setCameraZ] = React.useState(150)
+  const [cameraX, setCameraX] = React.useState(3)
+  const [cameraY, setCameraY] = React.useState(1)
+  const [cameraZ, setCameraZ] = React.useState(16)
   return (
     <>
       <div className="bg" />
       <h1>Pam Pam PAAA!</h1>
       <div
+        className="controls"
         style={{
-          padding: '20px',
-          position: 'absolute',
-          right: 0,
-          top: 0,
-          background: 'rgba(0,0,0,0.1)',
           ...flexCentered,
-          color: 'white',
-          zIndex: 99999,
         }}
       >
         <div style={flexCentered}>
           <h2>Canvas</h2>
-          <span>Camera Position</span>
+          <span>Device Pixel Ratio -&gt; DPR</span>
+          <div>
+            <RangeInput
+              name="dpr-min"
+              value={dprMin}
+              onChange={e => {
+                setDprMin(e.target.valueAsNumber)
+              }}
+              min={0}
+              max={10}
+            />
+            <RangeInput
+              name="dpr-max"
+              value={dprMax}
+              onChange={e => {
+                setDprMax(e.target.valueAsNumber)
+              }}
+              min={0}
+              max={10}
+            />
+          </div>
+        </div>
+        <div style={flexCentered}>
+          <h2>Perspective Camera</h2>
+          <span>Position</span>
           <div>
             <RangeInput
               name="x"
@@ -116,29 +134,8 @@ export default function App() {
               max={360}
             />
           </div>
-          <span>Device Pixel Ratio -&gt; DPR</span>
-          <div>
-            <RangeInput
-              name="dpr-min"
-              value={dprMin}
-              onChange={e => {
-                setDprMin(e.target.valueAsNumber)
-              }}
-              min={0}
-              max={10}
-            />
-            <RangeInput
-              name="dpr-max"
-              value={dprMax}
-              onChange={e => {
-                setDprMax(e.target.valueAsNumber)
-              }}
-              min={0}
-              max={10}
-            />
-          </div>
         </div>
-        <div>
+        <div style={flexCentered}>
           <h2>Fog</h2>
           <label htmlFor="color">
             Color

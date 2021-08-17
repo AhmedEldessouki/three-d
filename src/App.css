@@ -38,10 +38,36 @@ h1 {
   text-align: left;
 }
 
-h1 > span {
+span {
   white-space: pre;
+  font-size: 1.2rem;
+  line-height: 2;
 }
 
+h2 {
+  margin: 10px 0;
+}
+
+.controls {
+  max-width: 300px;
+  padding: 20px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.2);
+  color: white;
+  z-index: 99999;
+  height: 100vh;
+}
+
+.controls label {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+  text-transform: capitalize;
+}
 .layer {
   position: absolute;
   bottom: 0;
